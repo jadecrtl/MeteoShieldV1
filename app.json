@@ -22,6 +22,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cacb42af-8131-42da-aec8-e3b1ff9f7f3c"
+      }
+    },
+    "owner": "jadecrtl",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/cacb42af-8131-42da-aec8-e3b1ff9f7f3c"
     }
   }
 }
