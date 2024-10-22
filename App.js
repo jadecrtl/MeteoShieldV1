@@ -11,7 +11,8 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.home}>
         <Text style={styles.title}>MeteoShield</Text>
-        <Text style={styles.text}>Bienvenue sur l'application MeteoShield</Text>
+        <Text style={styles.text}>Bienvenue sur l'application MeteoShield Test Aaishah
+        </Text>
         <Button
           title="À propos"
           onPress={() => navigation.navigate('About')}
