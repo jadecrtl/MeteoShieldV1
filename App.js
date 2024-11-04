@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar'; // Importation pour gérer la barre
 import HomeScreen from './screens/HomeScreen'; // Importation de l'écran d'accueil
 import AboutScreen from './screens/AboutScreen'; // Importation de l'écran à propos*
 import SignUpScreen from './screens/SignUpScreen';
+import SettingScreen from './screens/SettingScreen';
 
 // Création d'une instance de Stack Navigator
 const Stack = createStackNavigator();
@@ -16,10 +17,11 @@ export default function App() {
     <NavigationContainer>
       {/* Définition du navigateur à pile */}
       <Stack.Navigator initialRouteName="Home">
-        {/* Écran d'accueil avec titre personnalisé */}
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Accueil' }} />
+    
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'MeteoShield' }} />
+
+        <Stack.Screen name="Parametres" component={SettingScreen} options={{ title: 'Paramètres' }} />
         
-        {/* Écran à propos avec titre personnalisé */}
         <Stack.Screen name="About" component={AboutScreen} options={{ title: 'À propos' }} />
       </Stack.Navigator>
       {/* Configuration de la barre d'état */}
