@@ -54,3 +54,8 @@ Vous serez invité à choisir une branche et à fournir un message pour cette mi
 - Choix de la branche : Sélectionnez la branche où vous souhaitez publier la mise à jour (par exemple, master).
 - Message de mise à jour : Fournissez un message descriptif, par exemple, "Correction des alertes météo".
 
+## Utiliser react-navigation 
+- npm install @react-navigation/native
+- npm install @react-navigation/stack
+- npm install react-native-gesture-handler
+
