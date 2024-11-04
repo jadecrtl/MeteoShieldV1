@@ -3,7 +3,8 @@ import { NavigationContainer } from '@react-navigation/native'; // Conteneur pou
 import { createStackNavigator } from '@react-navigation/stack'; // Création d'un navigateur à pile
 import { StatusBar } from 'expo-status-bar'; // Importation pour gérer la barre d'état de l'application
 import HomeScreen from './screens/HomeScreen'; // Importation de l'écran d'accueil
-import AboutScreen from './screens/AboutScreen'; // Importation de l'écran à propos
+import AboutScreen from './screens/AboutScreen'; // Importation de l'écran à propos*
+import SignUpScreen from './screens/SignUpScreen';
 
 // Création d'une instance de Stack Navigator
 const Stack = createStackNavigator();
