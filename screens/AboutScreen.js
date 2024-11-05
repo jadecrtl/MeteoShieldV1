@@ -18,20 +18,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#2A2A3B',
+    backgroundColor: '#FFFFFF', // Fond blanc
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#8FBC8F',
+    color: '#000000', // Texte noir
     marginBottom: 10,
   },
   text: {
     fontSize: 18,
-    color: '#FFFFFF',
+    color: '#000000', // Texte noir en dehors des bulles
     textAlign: 'center',
     paddingHorizontal: 20,
   },
 });
+
 
 export default AboutScreen;
