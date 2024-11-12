@@ -31,6 +31,7 @@ const SignUpScreen = ({ navigation }) => {
                 value={username}
                 onChangeText={setUsername}
                 style={styles.input}
+                placeholderTextColor={"#FFFFFF"}
             />
             <TextInput
                 placeholder="Password"
@@ -38,12 +39,15 @@ const SignUpScreen = ({ navigation }) => {
                 onChangeText={setPassword}
                 secureTextEntry
                 style={styles.input}
+                placeholderTextColor={"#FFFFFF"}
             />
             <TextInput
                 placeholder="Email"
                 value={email}
                 onChangeText={setEmail}
                 style={styles.input}
+                placeholderTextColor={"#FFFFFF"}
+                
             />
             <Button title="Sign Up" onPress={handleSignUp} />
         </View>
