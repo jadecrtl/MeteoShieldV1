@@ -12,15 +12,16 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 20,
         textAlign: 'center',
-        color: '#FFFFFF', // Texte blanc
+        color: '#FFFFFF', 
     },
     input: {
         borderWidth: 1,
+        color: "#FFFFFF",
         borderColor: '#ccc',
         padding: 10,
         marginBottom: 10,
-        borderRadius: 5,
-        color: "FFFFFF",
+        borderRadius: 5
+        
     }
     
 });
