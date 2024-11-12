@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { SafeAreaView, View, Text, Button, StyleSheet, Modal, TouchableOpacity } from 'react-native'; 
+import { SafeAreaView, View, Text, Button, StyleSheet, Modal, TouchableOpacity, Image } from 'react-native'; 
 import { useFocusEffect } from '@react-navigation/native'; // Importer useFocusEffect
 import styles from '../css/HomeScreenStyles';
 
@@ -16,15 +16,18 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.home}>
-        <Text style={styles.title}>Bienvenue sur la page d'accueil de MeteoShield</Text>
-        <Text style={styles.text}>Page d'accueil de l'application</Text>
+        <Text style={styles.title}>Text</Text>
+        <Text style={styles.text}>Text</Text>
         
         <View style={styles.menuButtonContainer}>
           <TouchableOpacity 
             onPress={() => setModalVisible(true)} // Ouvrir le modal lors du clic
             style={styles.customButton}
           >
-            <Text style={styles.buttonText}>‾‾‾</Text>
+            <Image
+              source={require("../assets/logo_home_maj.png")} // Chemin de l'image
+              style={styles.image}
+            />
           </TouchableOpacity>
         </View>
 
