@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, Button, StyleSheet, Modal, TouchableOpacity } from 'react-native'; 
-import SettingsScreen from './SettingScreen';
 
 // Composant HomeScreen qui représente l'écran d'accueil de l'application
 const HomeScreen = ({ navigation }) =>{ 
@@ -34,13 +33,13 @@ const HomeScreen = ({ navigation }) =>{
               <Text style={styles.modalTitle}>Menu</Text>
 
               {/* Boutons du menu */}
-              <TouchableOpacity style={styles.modalButton} onPress={() => navigation.navigate('Connexion')}>
+              <TouchableOpacity style={styles.modalButton} onPress={() => navigation.navigate('Log In')}>
                 <Text style={styles.modalButtonText}>Connexion</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.modalButton} onPress={() => navigation.navigate('Inscription')}>
+              <TouchableOpacity style={styles.modalButton} onPress={() => navigation.navigate('Sign Up')}>
                 <Text style={styles.modalButtonText}>Inscription</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.modalButton} onPress={() => navigation.navigate('Parametres')}>
+              <TouchableOpacity style={styles.modalButton} onPress={() => navigation.navigate('Settings')}>
                 <Text style={styles.modalButtonText}>Paramètres</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.modalButton} onPress={() => navigation.navigate('About')}>
