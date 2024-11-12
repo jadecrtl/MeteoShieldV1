@@ -8,8 +8,16 @@ app.use(bodyParser.json());
 // Route pour l'inscription (SignUp)
 app.post('/signup', async (req, res) => {
     const { username, password, email, preferences } = req.body;
+    
     try {
-        const newUser = await User.create({ username, password, email, preferences });
+        // Crée un nouvel utilisateur avec ou sans le champ "preferences"
+        const newUser = await User.create({
+            username,
+            password,
+            email,
+            preferences: preferences || {} // Si "preferences" est absent, on met un objet vide
+        });
+        
         res.status(201).json(newUser);
     } catch (error) {
         res.status(400).json({ error: error.message });
