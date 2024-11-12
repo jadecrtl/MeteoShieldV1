@@ -25,7 +25,7 @@ const HomeScreen = ({ navigation }) => {
             style={styles.customButton}
           >
             <Image
-              source={require("../assets/logo_home_maj.png")} // Chemin de l'image
+              source={require("../assets/logo_home_maj_edited_V1.png")} // Chemin de l'image
               style={styles.image}
             />
           </TouchableOpacity>
