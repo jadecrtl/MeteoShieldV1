@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 import { SafeAreaView, View, Text, Button, StyleSheet, Modal, TouchableOpacity, Image } from 'react-native'; 
 import { useFocusEffect } from '@react-navigation/native'; // Importer useFocusEffect
 import styles from '../css/HomeScreenStyles';
-import { getUserLocation } from '../components/Geolocalisation'; // Importer la fonction de géolocalisation
 
 
 const HomeScreen = ({ navigation }) => { 
