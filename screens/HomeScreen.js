@@ -2,9 +2,14 @@ import React, { useState, useCallback } from 'react';
 import { SafeAreaView, View, Text, Button, StyleSheet, Modal, TouchableOpacity, Image } from 'react-native'; 
 import { useFocusEffect } from '@react-navigation/native'; // Importer useFocusEffect
 import styles from '../css/HomeScreenStyles';
+import { getUserLocation } from '../components/Geolocalisation'; // Importer la fonction de géolocalisation
+
 
 const HomeScreen = ({ navigation }) => { 
   const [modalVisible, setModalVisible] = useState(false);
+  const [weather, setWeather] = useState(null); // Pour stocker les données météo
+  const [searchQuery, setSearchQuery] = useState(''); // Pour stocker la ville recherchée
+
 
   // Réinitialise le state à chaque retour sur l'écran Home
   useFocusEffect(
@@ -13,24 +18,31 @@ const HomeScreen = ({ navigation }) => {
     }, [])
   );
 
+  /* Récupérer la géolocalisation et les données météo
+  const newLocal = useEffect(() => {
+    getUserLocation(setWeather); // Appeler la fonction pour obtenir la géolocalisation et la météo
+  }, []);*/
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.home}>
-        <Text style={styles.title}>Text</Text>
-        <Text style={styles.text}>Text</Text>
-        
+        <Text style={styles.title}>Météo Actuelle</Text>
+
+
+        {/* Bouton pour ouvrir le menu */}
         <View style={styles.menuButtonContainer}>
           <TouchableOpacity 
             onPress={() => setModalVisible(true)} // Ouvrir le modal lors du clic
             style={styles.customButton}
           >
             <Image
-              source={require("../assets/logo_home_maj.png")} // Chemin de l'image
+              source={require("../assets/logo_home_maj_edited_V1.png")} // Chemin de l'image
               style={styles.image}
             />
           </TouchableOpacity>
         </View>
 
+        {/* Modal pour le menu */}
         <Modal
           animationType="slide" // Animation du modal (défilement du bas)
           transparent={true} // Modal transparent pour voir l'arrière-plan

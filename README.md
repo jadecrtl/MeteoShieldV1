@@ -59,3 +59,7 @@ Vous serez invité à choisir une branche et à fournir un message pour cette mi
 - npm install @react-navigation/stack
 - npm install react-native-gesture-handler
 
+## Visualiser les icones de react native 
+- npm install react-native-vector-icons
+OU
+- yarn add react-native-vector-icons
