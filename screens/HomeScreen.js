@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import logoHome from '../assets/logo_home_maj_edited_V1.png'
 import '../css/HomeScreenStyles.css'; // Importation du fichier CSS
 
 const HomeScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="container">
@@ -17,8 +19,8 @@ const HomeScreen = () => {
             className="customButton"
           >
             <img
-              src="./assets/logo_home_maj_edited_V1.png" 
-              alt="Logo Home"
+              src={logoHome} 
+              //alt="Logo Home"
               className="image"
             />
           </button>

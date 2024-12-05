@@ -1,23 +1,53 @@
+/* Conteneur principal */
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #1B263B; /* Fond bleu nuit */
   height: 100vh;
   padding: 20px;
-  color: #FFFFFF; /* Texte blanc */
+  background-color: #f0f4f8; /* Couleur de fond douce */
+  text-align: center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Titre */
 .title {
-  font-size: 24px;
+  font-size: 2.5rem;
+  color: #2c3e50; /* Couleur de texte sombre */
+  margin-bottom: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
+  text-transform: uppercase;
 }
 
+/* Texte descriptif */
 .text {
-  font-size: 18px;
-  text-align: center;
-  padding: 0 20px;
+  font-size: 1.2rem;
+  color: #34495e; /* Couleur légèrement atténuée */
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 600px; /* Limite la largeur du texte */
+  text-align: justify;
+}
+
+/* Bouton */
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff; /* Texte blanc */
+  background-color: #3498db; /* Couleur bleue */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+  background-color: #2980b9; /* Bleu foncé au survol */
+  transform: scale(1.05); /* Légère augmentation de la taille */
+}
+
+.button:active {
+  background-color: #1c5d82; /* Bleu encore plus foncé au clic */
 }

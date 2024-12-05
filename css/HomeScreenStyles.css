@@ -1,98 +1,107 @@
+/* Styles généraux */
 .container {
-  background-color: #1B263B; /* Fond bleu nuit */
-  padding: 20px;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.image {
-  width: 70px;
-  height: 70px;
-  margin: 10px;
+  height: 100vh;
+  background-color: #f9f9f9;
+  margin: 0;
 }
 
 .home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #344D72; /* Bulles bleu nuit plus clair */
-  padding: 40px;
-  border-radius: 15px;
-  margin: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.menuButtonContainer {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
 }
 
 .title {
-  font-size: 36px;
-  font-weight: bold;
-  color: #FFFFFF; /* Texte blanc */
+  font-size: 2rem;
+  color: #333333;
   margin-bottom: 20px;
-  text-align: center;
 }
 
+/* Bouton du menu */
+.menuButtonContainer {
+  margin: 20px 0;
+}
+
+.customButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s;
+}
+
+.customButton:hover .image {
+  transform: scale(1.1);
+}
+
+/* Modal */
 .modalContainer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(27, 38, 80, 0.8); /* Fond modal semi-transparent bleu nuit */
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .modalView {
-  background-color: #1B263B;
-  border-radius: 20px;
-  padding: 35px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
   text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .modalTitle {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 1.5rem;
+  color: #222222;
   margin-bottom: 15px;
-  color: #FFFFFF; /* Texte blanc */
 }
 
 .modalButton {
-  background-color: #344D72; /* Boutons bleu nuit plus clair */
+  width: 100%;
   padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  width: 200px;
-  color: #FFFFFF; /* Texte blanc */
-  font-size: 18px;
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #007BFF;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .modalButton:hover {
-  background-color: #2A3E5E; /* Couleur légèrement plus foncée au survol */
+  background-color: #0056b3;
 }
 
 .closeButton {
-  background-color: #007ACC; /* Couleur bleu clair */
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 20px;
-  color: #FFFFFF; /* Texte blanc */
-  font-size: 16px;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff4c4c;
+  color: #ffffff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .closeButton:hover {
-  background-color: #005FA8; /* Couleur légèrement plus foncée au survol */
+  background-color: #cc0000;
 }
