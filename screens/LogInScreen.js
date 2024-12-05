@@ -1,46 +1,46 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Alert, StyleSheet } from 'react-native';
+import '../css/LogInScreenStyles.css';
 import axios from 'axios';
-import styles from '../css/LogInScreenStyles'; // Importation des styles
 
-const LogInScreen = ({ navigation }) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+const LogInScreen = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-    const handleLogIn = async () => {
-        try {
-            const response = await axios.post('http://172.22.176.229:3000/login', {
-                username,
-                password
-            });
-            Alert.alert('Success', 'Login successful!', [
-                { text: 'OK', onPress: () => navigation.navigate('Home') }
-            ]);
-        } catch (error) {
-            Alert.alert('Error', error.response?.data?.message || 'Invalid credentials');
-        }
-    };
-    return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Log In</Text>
-            <TextInput
-                placeholder="Username"
-                value={username}
-                onChangeText={setUsername}
-                style={styles.input}
-                placeholderTextColor={"#FFFFFF"}
-                />
-            <TextInput
-                placeholder="Password"
-                value={password}
-                onChangeText={setPassword}
-                secureTextEntry
-                style={styles.input}
-                placeholderTextColor={"#FFFFFF"}
-                />
-            <Button title="Log In" onPress={handleLogIn} />
-        </View>
-    );
+  const handleLogIn = async () => {
+    try {
+      const response = await axios.post('http://172.22.176.229:3000/login', {
+        username,
+        password,
+      });
+      alert('Login successful!');
+      window.location.href = '/'; // Redirige vers la page d'accueil
+    } catch (error) {
+      alert(error.response?.data?.message || 'Invalid credentials');
+    }
+  };
+
+  return (
+    <div className="container">
+      <h1 className="title">Log In</h1>
+      <input
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        className="input"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className="input"
+      />
+      <button onClick={handleLogIn} className="button">
+        Log In
+      </button>
+    </div>
+  );
 };
 
 export default LogInScreen;
