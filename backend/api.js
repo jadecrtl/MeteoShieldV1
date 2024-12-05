@@ -1,30 +1,29 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { User } = require('./database');
 
 const app = express();
+app.use(cors()); // Permettre les requêtes cross-origin
 app.use(bodyParser.json());
 
-// Route pour l'inscription (SignUp)
+// Route pour l'inscription
 app.post('/signup', async (req, res) => {
     const { username, password, email, preferences } = req.body;
-    
     try {
-        // Crée un nouvel utilisateur avec ou sans le champ "preferences"
         const newUser = await User.create({
             username,
             password,
             email,
-            preferences: preferences || {} // Si "preferences" est absent, on met un objet vide
+            preferences: preferences || {}
         });
-        
         res.status(201).json(newUser);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 });
 
-// Route pour la connexion (LogIn)
+// Route pour la connexion
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
     try {
@@ -39,24 +38,27 @@ app.post('/login', async (req, res) => {
     }
 });
 
-// Nouvelle route pour récupérer des données météo
+// Route pour récupérer les données météo (exemple)
 app.post('/weather', async (req, res) => {
     const { username, geolocation } = req.body;
     if (!geolocation) {
         return res.status(400).json({ message: 'Geolocation is required' });
     }
-    
+
     try {
         const user = await User.findOne({ where: { username } });
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
-        
-        // Ici, on pourra appeler une API météo externe avec la géolocalisation fournie.
-        // Par exemple, quelque chose comme:
-        // const weatherData = await fetchWeatherAPI(geolocation);
 
-        res.status(200).json({ message: 'Weather data fetched successfully', weather: "fakeWeatherData" });
+        // Simule des données météo
+        const weatherData = {
+            temperature: '20°C',
+            condition: 'Sunny',
+            location: geolocation
+        };
+
+        res.status(200).json({ message: 'Weather data fetched successfully', weather: weatherData });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/HomeScreenStyles.css'; // Importation du fichier CSS
 
 const HomeScreen = () => {
@@ -29,11 +30,19 @@ const HomeScreen = () => {
             <div className="modalView">
               <h2 className="modalTitle">Menu</h2>
 
-              {/* Boutons du menu */}
-              <button className="modalButton">Connexion</button>
-              <button className="modalButton">Inscription</button>
-              <button className="modalButton">Paramètres</button>
-              <button className="modalButton">À propos</button>
+              {/* Boutons du menu avec liens */}
+              <Link to="/login">
+                <button className="modalButton">Connexion</button>
+              </Link>
+              <Link to="/signup">
+                <button className="modalButton">Inscription</button>
+              </Link>
+              <Link to="/settings">
+                <button className="modalButton">Paramètres</button>
+              </Link>
+              <Link to="/about">
+                <button className="modalButton">À propos</button>
+              </Link>
 
               {/* Bouton pour fermer le modal */}
               <button 
